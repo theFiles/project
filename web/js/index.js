@@ -36,13 +36,21 @@ var pwdBlur = function(){
 }
 
 var formSubmit = function(){
-    var userValue = document.getElementById('user-ipt');
-    var userIni = userValue.getAttribute('ini-val');
-    var pwdValue = document.getElementById('pwd-ipt');
-    var pwdIni = pwdValue.getAttribute('ini-val');
+    var userValue = document.getElementById('user-ipt'),
+        userIni   = userValue.getAttribute('ini-val'),
+        pwdValue  = document.getElementById('pwd-ipt'),
+        pwdIni    = pwdValue.getAttribute('ini-val');
 
+    if(
+        userValue    != ''
+        || pwdValue  != ''
+        || userValue != userIni
+        || pwdValue  != pwdIni
+    ){
+        alert('账户密码不能为空！');
+        return false;
+    }
 
-    return false;
 }
 
 var pwd = document.getElementById('pwd-ipt');
