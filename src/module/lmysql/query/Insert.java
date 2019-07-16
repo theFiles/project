@@ -5,12 +5,26 @@ import module.lmysql.LMysql;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class Insert extends LMysql<Insert,Integer> {
     private String[] fields;
     private List values = new ArrayList();
 
+    public Insert(Connection conn, Map<String,String> info){
+        int num = 0;
+        int len = info.size();
+        fields = new String[len];
+        String[] values = new String[len];
+        for (Object key:info.keySet()){
+            fields[num] = (String) key;
+            values[num] = (String) info.get(key);
+            ++num;
+        }
+        setConn(conn);
+        value(values);
+    }
     public Insert(Connection conn, String[] arr){
         setConn(conn);
         fields = arr;

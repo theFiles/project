@@ -79,7 +79,7 @@
                 </tr>
             </tbody>
         </table>
-        <input class="btn submit-btn" type="button" value="提交">
+        <input class="btn submit-btn" type="submit" value="提交">
         <input class="btn dashed-box" type="button" value="返回" onclick="location.href='/index?c=Login'">
     </form>
 </body>

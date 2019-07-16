@@ -5,6 +5,7 @@ import module.lmysql.query.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 实例化类数据库连接
@@ -66,8 +67,11 @@ public class Mysql implements IConfig {
         return new Select(conn,field);
     }
 
-    public Insert insert(String... str){
-        return new Insert(conn,str);
+    public Insert insert(Map<String,String> info){
+        return new Insert(conn,info);
+    }
+    public Insert insert(String... field){
+        return new Insert(conn,field);
     }
 
     public Update update(String table){

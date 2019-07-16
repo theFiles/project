@@ -13,15 +13,15 @@ abstract class LHttpServlet extends HttpServlet {
     /**
      * 重定向
      */
-    protected void jump(String name,HttpServletResponse resp) throws ServletException, IOException{
-        resp.sendRedirect(name);
+    protected void jump(String uri,HttpServletResponse resp) throws ServletException, IOException{
+        resp.sendRedirect(uri);
     }
 
     /**
      * 转发
      */
-    protected void jump(String name,HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(name).forward(req,resp);
+    protected void jump(String uri,HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher(uri).forward(req,resp);
     }
 
     /**

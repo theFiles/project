@@ -18,17 +18,19 @@ var ckPwd = function(node){
     else if(val !== ckNode.value.trim()){
         error(ckNode,'密码与确认密码不一致');
     }
+    else return true;
 };
 
 var ckPhone = function(node){
     var val = node.value.trim();
 
-    if(val > 11){
-        error(node,'手机号必须大于11位');
+    if(val < 11){
+        error(node,'手机号必须大于10位');
     }
     else if(!(/^[0-9]+$/.test(val))){
         error(node,'手机号中有非法字符');
     }
+    else return true;
 };
 
 var ckEmail = function(node){
@@ -45,7 +47,8 @@ var ckEmail = function(node){
 
 var toSubmit = function(){
     var nodes = document.getElementsByClassName('form-node'),
-        len   = nodes.length;
+        len   = nodes.length,
+        res   = true;
 
     for(var i=0; i<len; i++){
         var node = nodes[i],
@@ -53,23 +56,22 @@ var toSubmit = function(){
 
         switch (name){
             case 'user':
-                ckUser(node);
+                if(!ckUser(node)) res = false;
                 break;
             case 'pwd':
-                ckPwd(node);
+                if(!ckPwd(node)) res = false;
                 break;
             case 'phone':
-                ckPhone(node);
+                if(!ckPhone(node)) res = false;
                 break
             case 'email':
-                ckEmail(node);
+                if(!ckEmail(node)) res = false;
                 break
         }
 
-        // console.log(name+':'+val);
     }
 
-    return false;
+    return res;
 };
 
 var subBtn = document.getElementsByClassName('submit-btn')[0];
