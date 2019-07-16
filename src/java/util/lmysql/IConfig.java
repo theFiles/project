@@ -1,6 +1,4 @@
-package lmysql;
-
-import java.sql.Connection;
+package java.util.lmysql;
 
 public interface IConfig {
     String driver            = "com.mysql.cj.jdbc.Driver";
@@ -8,7 +6,7 @@ public interface IConfig {
     short port               = 3306;
     String root              = "root";
     String pwd               = "root";
-    String dbName            = "work";
+    String dbName            = "project";
     String characterEncoding = "utf8";
     boolean useSSL           = false;
     String serverTimezone    = "CST";

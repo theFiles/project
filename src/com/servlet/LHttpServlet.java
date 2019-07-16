@@ -20,4 +20,8 @@ public class LHttpServlet extends HttpServlet {
     protected void jump(String name,HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher(name).forward(req,resp);
     }
+
+    /**
+     * 打印
+     */
 }

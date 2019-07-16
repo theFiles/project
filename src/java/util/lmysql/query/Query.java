@@ -1,6 +1,6 @@
-package lmysql.query;
+package java.util.lmysql.query;
 
-import lmysql.LMysql;
+import java.util.lmysql.LMysql;
 
 import java.sql.Connection;
 import java.util.List;

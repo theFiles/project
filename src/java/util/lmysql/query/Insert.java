@@ -1,11 +1,8 @@
-package lmysql.query;
+package java.util.lmysql.query;
 
-import lmysql.LMysql;
-import lmysql.Mysql;
+import java.util.lmysql.LMysql;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

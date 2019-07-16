@@ -5,7 +5,7 @@ var userFocus = function(){
 };
 
 var userBlur = function(){
-    if(this.value){
+    if(!this.value){
         this.value = this.getAttribute('ini-val');
     }
 };
@@ -18,7 +18,8 @@ var pwdFocus = function(){
 };
 
 var pwdBlur = function(){
-    if(this.value){
+    console.log(this);
+    if(!this.value){
         this.setAttribute('type','text');
         this.value = this.getAttribute('ini-val');
     }
@@ -36,8 +37,8 @@ var formSubmit = function(){
         pwdIni    = pwd.getAttribute('ini-val');
 
     if(
-        userVal
-        || pwdVal
+        !userVal
+        || !pwdVal
         || userVal === userIni
         || pwdVal  === pwdIni
     ){
