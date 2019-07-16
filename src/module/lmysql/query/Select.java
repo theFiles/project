@@ -1,11 +1,12 @@
-package java.util.lmysql.query;
+package module.lmysql.query;
 
-import java.util.lmysql.*;
+import module.lmysql.*;
 
 import java.sql.*;
 import java.util.List;
+import java.util.Map;
 
-public class Select extends LMysql<Select,List>{
+public class Select extends LMysql<Select,List<Map>>{
 
     /**
      * 设置结果集

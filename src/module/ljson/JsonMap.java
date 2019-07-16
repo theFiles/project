@@ -1,4 +1,4 @@
-package java.util.ljson;
+package module.ljson;
 
 
 import java.util.HashMap;
@@ -75,7 +75,7 @@ public class JsonMap extends Json{
                         map.put(key,JsonList.getJsonList(value,false,errRep));
                         break;
 
-                    // java.util.ljson,递归
+                    // module.ljson,递归
                     case 3:
                         map.put(key, getJsonMap(value, false,errRep));
                         break;

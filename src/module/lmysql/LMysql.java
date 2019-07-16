@@ -1,4 +1,4 @@
-package java.util.lmysql;
+package module.lmysql;
 
 import com.sun.istack.internal.NotNull;
 

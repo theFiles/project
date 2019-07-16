@@ -1,4 +1,4 @@
-package java.util.lmysql;
+package module.lmysql;
 
 public interface IConfig {
     String driver            = "com.mysql.cj.jdbc.Driver";

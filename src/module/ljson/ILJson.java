@@ -1,4 +1,4 @@
-package java.util.ljson;
+package module.ljson;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

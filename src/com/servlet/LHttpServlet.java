@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class LHttpServlet extends HttpServlet {
+abstract class LHttpServlet extends HttpServlet {
+    abstract public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
+    abstract public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
+
     /**
      * 重定向
      */
@@ -24,4 +27,6 @@ public class LHttpServlet extends HttpServlet {
     /**
      * 打印
      */
+    protected  void print(){}
+
 }

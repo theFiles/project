@@ -1,4 +1,4 @@
-package java.util.ljson;
+package module.ljson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,9 +42,9 @@ public abstract class Json {
         return strType(json) == ckType;
     }
     /**
-     * json字符串类型识别 0.异常 1.数值 2.字符串 3.java.util.ljson 4.list
+     * json字符串类型识别 0.异常 1.数值 2.字符串 3.module.ljson 4.list
      * @param json  json字符串
-     * @return      0.异常 1.数值 2.字符串 3.java.util.ljson 4.list
+     * @return      0.异常 1.数值 2.字符串 3.module.ljson 4.list
      */
     protected static byte strType(String json){
         String tempStr = json.trim();
@@ -236,7 +236,7 @@ public abstract class Json {
      * @param str   字符串
      * @return      unicode字符串
      */
-    protected static String enUniCode(String str){
+    public static String enUniCode(String str){
         StringBuffer buff = new StringBuffer();
         int len = str.length();
         for (int i=0; i<len; i++){
@@ -255,7 +255,7 @@ public abstract class Json {
      * @param c     字符
      * @return      unicode字符串
      */
-    protected static String uniCode(char c){
+    public static String uniCode(char c){
         StringBuffer buff = new StringBuffer("\\u");
         int j = (c >>>8); //取出高8位
         String tmp = Integer.toHexString(j);
@@ -280,7 +280,7 @@ public abstract class Json {
      * @param unicode       unicode字符串
      * @return              转码后的字符串
      */
-    protected static String deUnicode(String unicode){
+    public static String deUnicode(String unicode){
         StringBuilder codeBuff = new StringBuilder(unicode);
         int codeIndex = codeBuff.indexOf("\\u");
 

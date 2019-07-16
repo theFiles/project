@@ -1,13 +1,8 @@
-#login,#user-ipt,#pwd-ipt,.login-registered {
-    border: 1px dashed gray;
-    background: transparent;
-}
 
 #login {
     position: relative;
     margin: 100px auto;
     width: 380px;
-    height: 200px;
     border-radius: 20px;
 }
 
@@ -29,24 +24,14 @@
 }
 
 #user-ipt,#pwd-ipt {
-    margin-top: 25px;
-    padding: 5px;
+    margin-top: 20px;
     width: 100%;
-    color: #999;
 }
 
-.login-submit,.login-registered {
-    box-sizing: content-box;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
+.login-btn {
+    margin-bottom: 12px;
 }
-
-.login-registered{color:#333;}
 
 .login-submit {
-    border: 0;
     margin-left: 20px;
-    background: lightseagreen;
-    color: #eee;
 }

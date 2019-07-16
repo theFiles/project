@@ -1,4 +1,4 @@
-package java.util.ljson;
+package module.ljson;
 
 
 import java.util.List;

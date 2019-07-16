@@ -1,6 +1,6 @@
-package java.util.lmysql;
+package module.lmysql;
 
-import java.util.lmysql.query.*;
+import module.lmysql.query.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,6 +24,7 @@ public class Mysql implements IConfig {
             return true;
         } catch (ClassNotFoundException e) {
             setErrorList(e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }

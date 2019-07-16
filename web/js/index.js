@@ -18,7 +18,6 @@ var pwdFocus = function(){
 };
 
 var pwdBlur = function(){
-    console.log(this);
     if(!this.value){
         this.setAttribute('type','text');
         this.value = this.getAttribute('ini-val');
@@ -42,7 +41,7 @@ var formSubmit = function(){
         || userVal === userIni
         || pwdVal  === pwdIni
     ){
-        alert('账户密码不能为空！');
+        document.getElementById('err-msg').innerText = '账户密码不能为空！';
         return false;
     }
 

@@ -1,0 +1,34 @@
+.form-beautify tr>td:first-child {
+    text-align: right;
+}
+
+.dashed-box,.dashed-ipt {
+    border: 1px dashed gray;
+    background: transparent;
+}
+
+.dashed-ipt {
+    margin-top: 5px;
+    padding: 5px;
+    color: #999;
+}
+
+.btn {
+    box-sizing: content-box;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    border: 0;
+    background: lightseagreen;
+    color: #eee;
+}
+
+.err-msg {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    color: red;
+}
