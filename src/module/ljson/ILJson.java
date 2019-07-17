@@ -43,31 +43,4 @@ public interface ILJson {
 
         return map;
     }
-
-    /*default void set(String key,Object value){
-
-        Class thisClass = this.getClass();
-        try {
-            Field field = thisClass.getDeclaredField(key);
-            Type type = field.getAnnotatedType().getType();
-            Method set = thisClass.getMethod(getMethodName("set", key)).invoke(this,value);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    default String getMethodName(String whit,String fieldName){
-        // 通过属性名取get方法名
-        return whit
-            +fieldName.substring(0,1).toUpperCase()
-            +fieldName.substring(1);
-    }*/
-
 }
