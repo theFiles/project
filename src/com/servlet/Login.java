@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
-import com.servlet.mysql.Users;
+import cn.dao.UsersDao;
 
 public class Login extends LHttpServlet {
     @Override
@@ -24,7 +24,7 @@ public class Login extends LHttpServlet {
         ){
             try {
 
-                Map res = Users.login(user,pwd);
+                Map res = UsersDao.login(user,pwd);
 
                 if(res != null){
                     req.getSession().setAttribute("userInfo",res);

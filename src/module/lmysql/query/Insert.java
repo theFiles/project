@@ -2,6 +2,7 @@ package module.lmysql.query;
 
 import module.lmysql.LMysql;
 
+import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,16 +13,18 @@ public class Insert extends LMysql<Insert,Integer> {
     private String[] fields;
     private List values = new ArrayList();
 
-    public Insert(Connection conn, Map<String,String> info){
+    public Insert(Connection conn, Map info){
         int num = 0;
         int len = info.size();
         fields = new String[len];
-        String[] values = new String[len];
+        Object[] values = new String[len];
+
         for (Object key:info.keySet()){
             fields[num] = (String) key;
-            values[num] = (String) info.get(key);
+            values[num] = info.get(key).toString();
             ++num;
         }
+
         setConn(conn);
         value(values);
     }

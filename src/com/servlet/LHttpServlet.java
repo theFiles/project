@@ -27,6 +27,8 @@ abstract class LHttpServlet extends HttpServlet {
     /**
      * 打印
      */
-    protected  void print(){}
+    protected  void print(String content){
+
+    }
 
 }

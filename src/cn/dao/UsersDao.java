@@ -1,22 +1,19 @@
-package com.servlet.mysql;
+package cn.dao;
 
+import cn.entity.Users;
 import module.lmysql.Mysql;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class Users {
-
+public class UsersDao {
     /**
      * 用户登录
      * @param user      账号
      * @param pwd       密码
      * @return          用户信息
      */
-    static public Map login(String user,String pwd){
+    static public Map login(String user, String pwd){
         Mysql mysql = new Mysql();
         List<Map> res = mysql.select("id","user_name")
                 .where("user_name", user)
@@ -28,17 +25,16 @@ public class Users {
         mysql.close();
 
         return res.size() == 1
-            ? res.get(0)
-            : null;
+                ? res.get(0)
+                : null;
     }
 
     /**
      * 创建用户
      */
-    static public int addUser(Map<String,String> info){
-
+    static public int addUser(Users obj){
         Mysql mysql = new Mysql();
-        int res = mysql.insert(info)
+        int res = mysql.insert(obj)
                 .query("users");
 
         if(res > 0){

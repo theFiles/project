@@ -1,5 +1,6 @@
 package module.lmysql;
 
+import module.ljson.ILJson;
 import module.lmysql.query.*;
 
 import java.sql.*;
@@ -67,7 +68,10 @@ public class Mysql implements IConfig {
         return new Select(conn,field);
     }
 
-    public Insert insert(Map<String,String> info){
+    public Insert insert(ILJson obj){
+        return insert(obj.getParam());
+    }
+    public Insert insert(Map info){
         return new Insert(conn,info);
     }
     public Insert insert(String... field){

@@ -11,6 +11,7 @@
     <title>商品列表</title>
 </head>
 <body>
-    <h1>商品列表</h1>
+    <h1>id：${sessionScope.userInfo.id}</h1>
+    <h2>用户：${sessionScope.userInfo.user_name}</h2>
 </body>
 </html>
