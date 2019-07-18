@@ -78,6 +78,9 @@ public class Mysql implements IConfig {
         return new Insert(conn,field);
     }
 
+    public Update update(ILJson obj,String... updateField){
+        return  new Update(conn,obj,updateField);
+    }
     public Update update(String table){
         return new Update(conn,table);
     }

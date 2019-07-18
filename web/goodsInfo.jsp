@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>注册页面</title>
@@ -34,35 +35,40 @@
             <tr>
                 <td>商品名称：</td>
                 <td>
-                    <input class="form-node dashed-ipt" type="text" name="name">
+                    <input class="form-node dashed-ipt" type="text" name="goods_name" value="${goodInfo.goods_name}">
                     <span class="err-msg"></span>
                 </td>
             </tr>
             <tr>
                 <td>商品价格：</td>
                 <td>
-                    <input class="form-node dashed-ipt" type="text" name="price">
+                    <input class="form-node dashed-ipt" type="text" name="goods_price" value="${goodInfo.goods_price}">
                     <span class="err-msg"></span>
                 </td>
             </tr>
             <tr>
                 <td>库存：</td>
                 <td>
-                    <input class="form-node dashed-ipt" type="text" name="stock">
+                    <input class="form-node dashed-ipt" type="text" name="goods_stock" value="${goodInfo.goods_stock}">
                     <span class="err-msg"></span>
                 </td>
             </tr>
             <tr>
                 <td>商品描述：</td>
                 <td>
-                    <input class="form-node dashed-ipt" type="text" name="description">
+                    <input class="form-node dashed-ipt" type="text" name="goods_description" value="${goodInfo.goods_description}">
                     <span class="err-msg"></span>
                 </td>
             </tr>
             <tr>
                 <td>商品图片：</td>
                 <td>
-                    <input class="dashed-ipt" type="file" name="description">
+                    <c:if test="${not empty goodInfo.goods_pic}">
+                        <img src="./image/${goodInfo.goods_pic}" alt="">
+                    </c:if>
+                    <c:if test="${empty goodInfo.goods_pic}">
+                        <input class="dashed-ipt" type="file" name="goods_pic" accept="image/*">
+                    </c:if>
                     <span class="err-msg"></span>
                 </td>
             </tr>

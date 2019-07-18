@@ -33,10 +33,13 @@
     <div class="goods-body">
         <c:forEach items="${goodsList}" var="goods">
             <div class="goods-info dashed-box">
-                <div class="goods-img">
-                    <img src="./image/${goods.goods_pic}" alt="">
-                </div>
-                <span>${goods.goods_name}</span>
+                <b>&times;</b>
+                <a href="/index?c=SetGoods&num=${goods.id}">
+                    <div class="goods-img">
+                        <img src="./image/${goods.goods_pic}" alt="">
+                    </div>
+                    <span>${goods.goods_name}</span>
+                </a>
             </div>
         </c:forEach>
     </div>

@@ -1,12 +1,29 @@
 package module.lmysql.query;
 
+import com.sun.istack.internal.NotNull;
+import module.ljson.ILJson;
 import module.lmysql.LMysql;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class Update extends LMysql<Update,Integer> {
     private StringBuffer setInfo = new StringBuffer();
+    public Update(Connection conn, ILJson obj,String[] updateField){
+        setConn(conn);
 
+        Map<String,Object> info = obj.getParam();
+        int len = updateField.length;
+
+        for (int i=0; i<len; i++){
+            String key = updateField[i];
+            Object value = info.get(key);
+            if(value != null) set(key,value);
+        }
+    }
     public Update(Connection conn, String table){
         from(table);
         setConn(conn);

@@ -50,6 +50,24 @@
     background: transparent;
 }
 
+.dashed-box {
+    position: relative;
+}
+
+.dashed-box > b {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+}
+
 .dashed-ipt {
     margin-top: 5px;
     padding: 5px;
