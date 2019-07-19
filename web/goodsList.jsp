@@ -11,38 +11,23 @@
 <head>
     <title>商品列表</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/public.css">
     <link rel="stylesheet" href="./css/goods.css">
 </head>
 <body>
-    <header class="nav">
-        <h1 class="title">商品列表</h1>
-        <ul>
-            <li id="login-info" class="nav-li">${sessionScope.userInfo.user_name}
-                <ul>
-                    <li><a href="/index?c=LoginOut">退出</a></li>
-                </ul>
-            </li>
-            <li class="nav-li">商品操作
-                <ul>
-                    <li><a href="/index?c=AddGoods">添加商品</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
+    <%@ include file="header.jsp"%>
     <div class="goods-body">
         <c:forEach items="${goodsList}" var="goods">
             <div class="goods-info dashed-box">
-                <b>&times;</b>
+                <b style="display: none;" num="${goods.id}" tips-name="${goods.goods_name}"></b>
                 <a href="/index?c=SetGoods&num=${goods.id}">
                     <div class="goods-img">
                         <img src="./image/${goods.goods_pic}" alt="">
                     </div>
-                    <span>${goods.goods_name}</span>
+                    <span class="goods-text">${goods.goods_name}</span>
                 </a>
             </div>
         </c:forEach>
     </div>
 </body>
-<script src="./js/public.js"></script>
+<script src="./js/goodsList.js"></script>
 </html>

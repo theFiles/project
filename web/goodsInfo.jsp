@@ -11,24 +11,9 @@
 <head>
     <title>注册页面</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/public.css">
 </head>
 <body>
-<header class="nav">
-    <h1 class="title">商品列表</h1>
-    <ul>
-        <li id="login-info" class="nav-li">${sessionScope.userInfo.user_name}
-            <ul>
-                <li><a href="/index?c=LoginOut">退出</a></li>
-            </ul>
-        </li>
-        <li class="nav-li">商品操作
-            <ul>
-                <li><a href="/index?c=AddGoods">添加商品</a></li>
-            </ul>
-        </li>
-    </ul>
-</header>
+<%@ include file="header.jsp"%>
 <form action="${submitUrl}" method="post" enctype="multipart/form-data">
     <table>
         <tbody class="form-beautify">
@@ -62,13 +47,12 @@
             </tr>
             <tr>
                 <td>商品图片：</td>
-                <td>
+                <td class="dashed-box">
+                    <b${empty goodInfo.goods_pic?' style="display:none;"':''} num="${param.num}"></b>
                     <c:if test="${not empty goodInfo.goods_pic}">
-                        <img src="./image/${goodInfo.goods_pic}" alt="">
+                        <img id="upload-img" src="./image/${goodInfo.goods_pic}" alt="">
                     </c:if>
-                    <c:if test="${empty goodInfo.goods_pic}">
-                        <input class="dashed-ipt" type="file" name="goods_pic" accept="image/*">
-                    </c:if>
+                        <input id="upload" ${empty goodInfo.goods_pic?'':' style="display:none;"'} type="file" name="goods_pic" accept="image/*">
                     <span class="err-msg"></span>
                 </td>
             </tr>
@@ -79,6 +63,5 @@
     <input class="btn dashed-box" type="button" value="返回" onclick="location.href='/index?c=GoodsList'">
 </form>
 </body>
-<script src="./js/public.js"></script>
 <script src="./js/goodsInfo.js"></script>
 </html>

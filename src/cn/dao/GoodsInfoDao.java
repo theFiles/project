@@ -67,4 +67,18 @@ public class GoodsInfoDao {
         return res;
     }
 
+    /**
+     * 删除商品
+     */
+    static public int delGoods(int id){
+        Mysql mysql = new Mysql();
+        int res = mysql.delete("goodsInfo")
+                .where("id",id)
+                .query(1);
+
+        mysql.close();
+
+        return res;
+    }
+
 }

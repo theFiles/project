@@ -9,6 +9,10 @@
     height: 200px;
 }
 
+.goods-info > a {
+    cursor: default;
+}
+
 .goods-info > a > .goods-img {
     overflow: hidden;
     wdith: 100%;
@@ -18,6 +22,7 @@
 }
 
 .goods-text {
+    display: block;
     width: 100%;
     height: 70px;
 }

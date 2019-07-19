@@ -44,11 +44,12 @@ abstract class LHttpServlet extends HttpServlet {
         // 是否上传文件表单(ServletFileUpload包)
         if(ServletFileUpload.isMultipartContent(req)){
 
-            // 取 ServletFileUpload 对象
-            FileItemFactory factory = new DiskFileItemFactory();
-            ServletFileUpload upload = new ServletFileUpload(factory);
 
             try {
+                // 取 ServletFileUpload 对象
+                FileItemFactory factory = new DiskFileItemFactory();
+                ServletFileUpload upload = new ServletFileUpload(factory);
+
                 // 把参数转换成上传文件格式
                 List<FileItem> fileItems = upload.parseRequest(req);
 
@@ -62,13 +63,13 @@ abstract class LHttpServlet extends HttpServlet {
                         }
                         // 上传文件空间
                         else{
+//                            System.out.println(f.isInMemory());
+//                            System.out.println(f.getSize());
                             // 取文件名
                             String fileName = f.getName();
-                            if("".equals(fileName)) continue;
 
                             // 获取文件上传路径
                             String parentPath = req.getServletContext().getRealPath(path);
-                            System.out.println(parentPath);
 
                             // 取文件对象
                             File dir = new File(parentPath);
@@ -98,7 +99,7 @@ abstract class LHttpServlet extends HttpServlet {
 
                     return true;
                 }
-            } catch (FileUploadException | RuntimeException e) {
+            } catch (Exception e) {
 //                e.printStackTrace();
             }
         }
