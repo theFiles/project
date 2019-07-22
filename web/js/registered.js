@@ -24,8 +24,8 @@ var ckPwd = function(node){
 var ckPhone = function(node){
     var val = node.value.trim();
 
-    if(val < 11){
-        error(node,'手机号必须大于10位');
+    if(val.length < 11){
+        error(node,'手机号必须11位或以上');
     }
     else if(!(/^[0-9]+$/.test(val))){
         error(node,'手机号中有非法字符');

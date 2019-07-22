@@ -56,7 +56,19 @@
                     <span class="err-msg"></span>
                 </td>
             </tr>
-
+            <c:if test="${not empty goodInfo.flag}">
+            <tr>
+                <td>商品状态</td>
+                <td>
+                    <label>
+                        <input type="radio" name ="flag" value="0" ${goodInfo.flag == 0?'checked':''}>禁用
+                    </label>
+                    <label>
+                        <input type="radio" name ="flag"  value="1"${goodInfo.flag == 1?'checked':''}>激活
+                    </label>
+                </td>
+            </tr>
+            </c:if>
         </tbody>
     </table>
     <input class="btn submit-btn" type="submit" value="提交">

@@ -17,7 +17,7 @@
     <%@ include file="header.jsp"%>
     <div class="goods-body">
         <c:forEach items="${goodsList}" var="goods">
-            <div class="goods-info dashed-box">
+            <div class="goods-info dashed-box" ${goods.flag == 0?'style="border-color:red;"':''}>
                 <b style="display: none;" num="${goods.id}" tips-name="${goods.goods_name}"></b>
                 <a href="/index?c=SetGoods&num=${goods.id}">
                     <div class="goods-img">

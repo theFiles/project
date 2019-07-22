@@ -28,9 +28,15 @@ public class AddGoods extends LHttpServlet {
         GoodsInfo goodsInfo = new GoodsInfo();
 
         if(uploadSubmit("/image",req,goodsInfo)){
-            GoodsInfoDao.addGoods(goodsInfo);
-            jump("/index?c=GoodsList",resp);
-            return;
+            try{
+                goodsInfo.setFlag(1);
+                GoodsInfoDao.addGoods(goodsInfo);
+                jump("/index?c=GoodsList",resp);
+                return;
+            }
+            catch (RuntimeException e){
+
+            }
         }
 
         resp.getWriter().print("<script>alert('创建失败');history.back();</script>");

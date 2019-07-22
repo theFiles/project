@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script>
+    if(${empty sessionScope.userInfo}){location.href = "/index?c=Login";}
+</script>
 <link rel="stylesheet" href="./css/public.css">
 <header class="nav">
     <h1 class="title">商品列表</h1>

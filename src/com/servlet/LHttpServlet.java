@@ -62,9 +62,10 @@ abstract class LHttpServlet extends HttpServlet {
                             obj.set(f.getFieldName(),f.getString("utf-8"));
                         }
                         // 上传文件空间
-                        else{
+                        else if(f.getSize() != 0){
 //                            System.out.println(f.isInMemory());
 //                            System.out.println(f.getSize());
+
                             // 取文件名
                             String fileName = f.getName();
 
